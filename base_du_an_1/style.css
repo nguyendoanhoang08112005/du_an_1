@@ -1,0 +1,461 @@
+/* Reset cơ bản */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+.row {
+    text-decoration: none;
+    display: flex; /* Sử dụng Flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Tách đều logo và menu */
+    width: 100%; /* Chiếm toàn bộ chiều ngang */
+    padding: 10px 20px; /* Khoảng cách trong */
+}
+
+/* Logo */
+.logo img {
+    width: 200px; /* Kích thước logo */
+    height: auto; /* Giữ tỉ lệ */
+    margin-left: 20px;
+}
+
+/* Menu */
+.nav-list {
+    display: flex;
+    list-style: none; /* Bỏ bullet points */
+    gap: 20px; /* Khoảng cách giữa các mục */
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+}
+.nav-list a:hover{
+text-decoration: none;
+color: #acacac;
+opacity: 0,1;
+}
+
+.nav-list li {
+    position: relative; /* Cần cho dropdown */
+}
+
+.nav-list a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #333; /* Màu chữ */
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+
+/* Cấu hình cho dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Menu dropdown ẩn theo mặc định */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Hiệu ứng hiển thị khi hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Kiểu dáng cho các mục trong dropdown */
+.dropdown-menu li a {
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+}
+
+/* Hiệu ứng khi hover vào các mục trong dropdown */
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Tạo hiệu ứng chuyển động cho icon */
+.dropdown i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Xoay icon khi dropdown được mở */
+.dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+/* Slide container */
+.slide {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Ẩn phần tràn ra ngoài */
+}
+/* Slide items */
+.slide-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động cho slide */
+}
+
+
+/* Card container */
+.card {
+    size: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Card image */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.card img:hover{
+    transform: scale(1.1); /* Phóng to hình ảnh một chút */
+}
+
+.card-content {
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.4); /* Màu nền trong suốt */
+    min-height: 70px;
+    padding: 20px; /* Khoảng cách bên trong */
+    display: flex; /* Căn chỉnh nội dung theo chiều ngang */
+    align-items: center;
+    justify-content: space-between; /* Khoảng cách đều giữa các phần tử */
+    color: #000;
+}
+
+/* Title styling */
+.card-content h3 {
+    margin: 0;
+    font-size: 19px; /* Kích thước font cho tên danh mục */
+}
+.card-content a {
+    text-decoration: none;
+    color: black;
+}
+.card-content a:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.7; /* Giảm độ mờ của văn bản khi hover */
+    font-weight: bold;
+}
+
+
+
+/* Style cho hình ảnh */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease; 
+}
+
+/* Khi hover vào hình ảnh */
+ .card-img-top:hover{
+    transform: scale(1.1); /* Phóng to hình ảnh một chút */
+}
+
+/* Style cho giá */
+.price {
+    font-size: 15px;
+    color: #f44336; /* Màu đỏ cho giá gốc */
+}
+
+.price-del {
+    font-size: 12px;
+    text-decoration: line-through;
+    color: #999; /* Màu xám cho giá đã giảm */
+}
+
+/* Style cho nút thêm vào giỏ hàng */
+.add-to-cart-btn {
+    background-color: #98919191; 
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 10px;
+    font-size: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 130px;
+    margin-left: -px;
+}
+
+/* Khi hover vào nút thêm vào giỏ hàng */
+.add-to-cart-btn:hover {
+    background-color: #000000; /* Tối màu khi hover */
+    color: #ffffff; /* Tối màu khi hover */
+}
+
+/* Căn giữa cho giá trị */
+.card-body a {
+    text-decoration: none;
+    color: black;
+    transition: opacity 0.3s ease;
+}
+
+.card-body a:hover {
+    opacity: 0.7; /* Giảm độ mờ của văn bản khi hover */
+    text-decoration: none;
+    color: #000;
+}
+
+.card-body .card-text {
+    font-size: 16px; /* Tùy chỉnh kích thước chữ */
+    font-weight: bold; /* Tùy chỉnh độ đậm của chữ */
+}
+
+
+.arrow-btn {
+    width: 40px;
+    height: 40px;
+    background-color: white; /* Nền trắng ban đầu */
+    color: black; /* Màu mũi tên đen */
+    border-radius: 50%; /* Hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Hiệu ứng hover mượt mà */
+    border: 1px solid transparent; /* Tạo khung mờ nếu cần */
+    transform: scale(1); /* Kích thước mặc định */
+}
+
+.arrow-btn i {
+    font-size: 16px; /* Kích thước mũi tên */
+
+}
+
+.arrow-btn:hover {
+    transform: scale(1.1); /* Phóng to hình tròn và mũi tên */
+    text-decoration: none;
+}
+
+button.prev, button.next {
+    width: 40px; /* Kích thước hình vuông */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(44, 43, 43, 0.5); /* Màu nền trong suốt */
+    border: none; /* Xóa viền */
+    border-radius: 5px; /* Bo góc, tùy chỉnh nếu cần */
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Đặt giữa theo chiều dọc */
+    transform: translateY(-50%);
+    z-index: 1000; /* Hiển thị trên các phần tử khác */
+    color: rgba(255, 255, 255, 0.74); /* Màu biểu tượng */
+    font-size: 20px; /* Kích thước biểu tượng */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đổ bóng */
+}
+
+button.prev {
+    left: 10px; /* Cách bên trái */
+}
+
+button.next {
+    right: 10px; /* Cách bên phải */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(169, 169, 169, 0.7); /* Màu nền khi hover */
+}
+.hover-button {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    color: black; /* Màu chữ mặc định */
+    background-color: #ffffff; /* Màu nền gốc */
+    padding: 10px 20px;
+    cursor: pointer;
+    overflow: hidden; /* Ẩn hiệu ứng tràn */
+    z-index: 1; /* Đảm bảo chữ luôn nằm trên */
+    transition: color 0.3s ease; /* Hiệu ứng mượt cho chữ */
+}
+
+.hover-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Bắt đầu từ bên trái ngoài nút */
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Màu nền khi hover */
+    z-index: -1; /* Đặt lớp nền dưới chữ */
+    transition: left 0.4s ease; /* Hiệu ứng chạy mượt */
+}
+
+.hover-button:hover::before {
+    left: 0; /* Di chuyển màu đen phủ toàn nút */
+}
+
+.hover-button:hover {
+    color: white; /* Đảm bảo chữ màu trắng khi hover */
+}
+.icons-container {
+    margin-left: 100px;
+}
+.icon {
+    display: flex;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333; /* Màu của icon */
+    align-items: center;
+}
+
+.icon:hover {
+    color: #555; /* Màu khi hover */
+    text-decoration: none;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 170px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: -30px;
+  }
+  
+  .search-bar input {
+    border: none;
+    outline: none;
+    background: none;
+    flex: 1;
+    /* padding: 8px; */
+    font-size: 12px;
+    width: 130px;
+  }
+  
+  .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    font-size: 15px;
+  }
+  
+  .search-bar input::placeholder {
+    color: #aaa;
+  }
+  .policy-container {
+    display: flex; /* Sử dụng Flexbox để dàn hàng ngang */
+    justify-content: space-between; /* Căn đều các mục */
+    flex-wrap: wrap; /* Các mục sẽ xuống dòng khi cửa sổ nhỏ */
+    gap: 10px;
+}
+
+.policy-item__inner {
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Khoảng cách giữa các mục */
+    text-align: left; /* Đảm bảo chữ nằm ngang */
+}
+
+.policy-item__icon {
+    margin-right: 15px; /* Khoảng cách giữa biểu tượng và thông tin */
+}
+
+.policy-item__icon img {
+    width: 30px; /* Kích thước của biểu tượng */
+    height: 30px;
+    object-fit: contain;
+}
+
+.policy-item__info {
+    display: flex;
+    flex-direction: column; /* Đảm bảo tiêu đề và mô tả thẳng hàng */
+}
+
+.info-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.infor-des {
+    font-size: 14px;
+    color: #555;
+}
+  /* Wrapper cho toàn bộ slide */
+  .slide2 {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-items2 {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.5s ease-in-out;
+    width: 80%;
+}
+.card2 {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+}
+
+.prev2, .next2 {
+    width: 40px; /* Kích thước hình vuông */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(114, 109, 109, 0.5); /* Màu nền trong suốt */
+    border: none; /* Xóa viền */
+    border-radius: 5px; /* Bo góc, tùy chỉnh nếu cần */
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Đặt giữa theo chiều dọc */
+    transform: translateY(-50%);
+    z-index: 1000; /* Hiển thị trên các phần tử khác */
+    color: rgba(255, 255, 255, 0.74); /* Màu biểu tượng */
+    font-size: 20px; /* Kích thước biểu tượng */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đổ bóng */
+}
+
+.prev2 {
+    left: 10px;
+}
+
+.next2 {
+    right: 10px;
+}
